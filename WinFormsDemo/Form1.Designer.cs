@@ -43,6 +43,7 @@
             lblUsername = new Label();
             lblUserProfession = new Label();
             lblUserAge = new Label();
+            lblError = new Label();
             SuspendLayout();
             // 
             // btnSave
@@ -162,36 +163,55 @@
             // 
             // lblUsername
             // 
-            lblUsername.AutoSize = true;
+            lblUsername.BackColor = SystemColors.ActiveCaption;
+            lblUsername.BorderStyle = BorderStyle.FixedSingle;
             lblUsername.Location = new Point(436, 197);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(60, 15);
+            lblUsername.Size = new Size(202, 15);
             lblUsername.TabIndex = 13;
             lblUsername.Text = "Username";
+            lblUsername.TextAlign = ContentAlignment.TopCenter;
             // 
             // lblUserProfession
             // 
-            lblUserProfession.AutoSize = true;
+            lblUserProfession.BackColor = SystemColors.ActiveCaption;
+            lblUserProfession.BorderStyle = BorderStyle.FixedSingle;
             lblUserProfession.Location = new Point(436, 223);
             lblUserProfession.Name = "lblUserProfession";
-            lblUserProfession.Size = new Size(62, 15);
+            lblUserProfession.Size = new Size(202, 15);
             lblUserProfession.TabIndex = 14;
             lblUserProfession.Text = "Profession";
+            lblUserProfession.TextAlign = ContentAlignment.TopCenter;
             // 
             // lblUserAge
             // 
-            lblUserAge.AutoSize = true;
+            lblUserAge.BackColor = SystemColors.ActiveCaption;
+            lblUserAge.BorderStyle = BorderStyle.FixedSingle;
             lblUserAge.Location = new Point(436, 249);
             lblUserAge.Name = "lblUserAge";
-            lblUserAge.Size = new Size(38, 15);
+            lblUserAge.Size = new Size(202, 15);
             lblUserAge.TabIndex = 15;
             lblUserAge.Text = "label1";
+            lblUserAge.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblError
+            // 
+            lblError.AutoSize = true;
+            lblError.BackColor = Color.FromArgb(192, 0, 0);
+            lblError.ForeColor = SystemColors.ActiveCaptionText;
+            lblError.Location = new Point(330, 330);
+            lblError.Name = "lblError";
+            lblError.Size = new Size(94, 15);
+            lblError.TabIndex = 16;
+            lblError.Text = "Error in Program";
+            lblError.TextAlign = ContentAlignment.TopCenter;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblError);
             Controls.Add(lblUserAge);
             Controls.Add(lblUserProfession);
             Controls.Add(lblUsername);
@@ -232,5 +252,6 @@
         private Label lblUsername;
         private Label lblUserProfession;
         private Label lblUserAge;
+        private Label lblError;
     }
 }

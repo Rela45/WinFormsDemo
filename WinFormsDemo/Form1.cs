@@ -33,6 +33,7 @@ namespace WinFormsDemo
             lblUserAge.Text = "Age: ";
             lblUsername.Text = "Username: ";
             lblUserProfession.Text = "Profession: ";
+            lblError.Enabled = false;
         }
 
         private void btnExitApp_Click(object sender, EventArgs e)
@@ -49,9 +50,13 @@ namespace WinFormsDemo
 
         private void btnDisplayInformation_Click(object sender, EventArgs e)
         {
-            lblUserAge.Text = "Age: " + "25";
-            lblUsername.Text = "Username: "+ "JohnDoe";
-            lblUserProfession.Text = "Profession: " + "Salumiere";
+            string name = "John Doe";
+            string profession = "Salumiere";
+            string age = "25";
+            lblUserAge.Text = "Age: " + age;
+            lblUsername.Text = "Username: "+ name;
+            lblUserProfession.Text = "Profession: " + profession;
+            lblError.Enabled = true; 
         }
     }
 }
