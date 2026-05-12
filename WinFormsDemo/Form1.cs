@@ -1,7 +1,13 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace WinFormsDemo
 {
     public partial class Form1 : Form
     {
+        string name;
+        string age;
+        string profession;
+        string password;
         public Form1()
         {
             InitializeComponent();
@@ -27,12 +33,13 @@ namespace WinFormsDemo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Welcome my Application");
+            MessageBox.Show("Welcome to my Application");
             btnExitApp.Enabled = false;
             btnLoadEventPlay.Enabled = false;
             lblUserAge.Text = "Age: ";
             lblUsername.Text = "Username: ";
             lblUserProfession.Text = "Profession: ";
+            lblInput.Text = "Password: ";
             lblError.Enabled = false;
         }
 
@@ -50,13 +57,34 @@ namespace WinFormsDemo
 
         private void btnDisplayInformation_Click(object sender, EventArgs e)
         {
-            string name = "John Doe";
-            string profession = "Salumiere";
-            string age = "25";
-            lblUserAge.Text = "Age: " + age;
-            lblUsername.Text = "Username: "+ name;
+            lblUsername.Text = "Username: " + name;
             lblUserProfession.Text = "Profession: " + profession;
-            lblError.Enabled = true; 
+            lblUserAge.Text = "Age: " + age;
+            lblInput.Text = "Password: ******** ";
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            // Get the user input from the labels and store them in variables
+            name = tbxName.Text;
+            age = tbxAge.Text;
+            password = tbxPassword.Text;
+            profession = tbxProfession.Text;
+
+            if(!string.IsNullOrEmpty(name) &&
+                !string.IsNullOrEmpty(age)&&
+                !string.IsNullOrEmpty(password)&&
+                !string.IsNullOrEmpty(profession))
+            {
+                btnDisplayInformation_Click(sender, e);
+                btnSubmit.Enabled = false;
+            }
+            else
+            {
+                lblError.Enabled = true;
+                MessageBox.Show("Please fill in all the fields before submitting.");
+            }
+
         }
     }
 }

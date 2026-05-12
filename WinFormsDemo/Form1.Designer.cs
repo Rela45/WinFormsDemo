@@ -44,6 +44,12 @@
             lblUserProfession = new Label();
             lblUserAge = new Label();
             lblError = new Label();
+            tbxName = new TextBox();
+            lblInput = new Label();
+            tbxAge = new TextBox();
+            tbxPassword = new TextBox();
+            tbxProfession = new TextBox();
+            btnSubmit = new Button();
             SuspendLayout();
             // 
             // btnSave
@@ -165,7 +171,7 @@
             // 
             lblUsername.BackColor = SystemColors.ActiveCaption;
             lblUsername.BorderStyle = BorderStyle.FixedSingle;
-            lblUsername.Location = new Point(436, 197);
+            lblUsername.Location = new Point(562, 235);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(202, 15);
             lblUsername.TabIndex = 13;
@@ -176,7 +182,7 @@
             // 
             lblUserProfession.BackColor = SystemColors.ActiveCaption;
             lblUserProfession.BorderStyle = BorderStyle.FixedSingle;
-            lblUserProfession.Location = new Point(436, 223);
+            lblUserProfession.Location = new Point(562, 272);
             lblUserProfession.Name = "lblUserProfession";
             lblUserProfession.Size = new Size(202, 15);
             lblUserProfession.TabIndex = 14;
@@ -187,11 +193,11 @@
             // 
             lblUserAge.BackColor = SystemColors.ActiveCaption;
             lblUserAge.BorderStyle = BorderStyle.FixedSingle;
-            lblUserAge.Location = new Point(436, 249);
+            lblUserAge.Location = new Point(562, 289);
             lblUserAge.Name = "lblUserAge";
             lblUserAge.Size = new Size(202, 15);
             lblUserAge.TabIndex = 15;
-            lblUserAge.Text = "label1";
+            lblUserAge.Text = "Age";
             lblUserAge.TextAlign = ContentAlignment.TopCenter;
             // 
             // lblError
@@ -199,18 +205,78 @@
             lblError.AutoSize = true;
             lblError.BackColor = Color.FromArgb(192, 0, 0);
             lblError.ForeColor = SystemColors.ActiveCaptionText;
-            lblError.Location = new Point(330, 330);
+            lblError.Location = new Point(322, 404);
             lblError.Name = "lblError";
             lblError.Size = new Size(94, 15);
             lblError.TabIndex = 16;
             lblError.Text = "Error in Program";
             lblError.TextAlign = ContentAlignment.TopCenter;
             // 
+            // tbxName
+            // 
+            tbxName.Location = new Point(562, 107);
+            tbxName.Name = "tbxName";
+            tbxName.PlaceholderText = "Type your Name...";
+            tbxName.Size = new Size(194, 23);
+            tbxName.TabIndex = 17;
+            // 
+            // lblInput
+            // 
+            lblInput.BackColor = SystemColors.ActiveCaption;
+            lblInput.BorderStyle = BorderStyle.FixedSingle;
+            lblInput.Location = new Point(562, 253);
+            lblInput.Name = "lblInput";
+            lblInput.Size = new Size(202, 15);
+            lblInput.TabIndex = 18;
+            lblInput.Text = "Password";
+            lblInput.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // tbxAge
+            // 
+            tbxAge.Location = new Point(562, 136);
+            tbxAge.Name = "tbxAge";
+            tbxAge.PlaceholderText = "Type your Age...";
+            tbxAge.Size = new Size(194, 23);
+            tbxAge.TabIndex = 19;
+            // 
+            // tbxPassword
+            // 
+            tbxPassword.Location = new Point(562, 165);
+            tbxPassword.Name = "tbxPassword";
+            tbxPassword.PasswordChar = '*';
+            tbxPassword.PlaceholderText = "Enter Password...";
+            tbxPassword.Size = new Size(194, 23);
+            tbxPassword.TabIndex = 20;
+            // 
+            // tbxProfession
+            // 
+            tbxProfession.Location = new Point(562, 197);
+            tbxProfession.Name = "tbxProfession";
+            tbxProfession.PlaceholderText = "Type your Profession...";
+            tbxProfession.Size = new Size(194, 23);
+            tbxProfession.TabIndex = 21;
+            // 
+            // btnSubmit
+            // 
+            btnSubmit.Location = new Point(453, 215);
+            btnSubmit.Name = "btnSubmit";
+            btnSubmit.Size = new Size(75, 23);
+            btnSubmit.TabIndex = 22;
+            btnSubmit.Text = "Submit";
+            btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.Click += btnSubmit_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnSubmit);
+            Controls.Add(tbxProfession);
+            Controls.Add(tbxPassword);
+            Controls.Add(tbxAge);
+            Controls.Add(lblInput);
+            Controls.Add(tbxName);
             Controls.Add(lblError);
             Controls.Add(lblUserAge);
             Controls.Add(lblUserProfession);
@@ -253,5 +319,11 @@
         private Label lblUserProfession;
         private Label lblUserAge;
         private Label lblError;
+        private TextBox tbxName;
+        private Label lblInput;
+        private TextBox tbxAge;
+        private TextBox tbxPassword;
+        private TextBox tbxProfession;
+        private Button btnSubmit;
     }
 }
