@@ -8,10 +8,12 @@ namespace WinFormsDemo
         string age;
         string profession;
         string password;
+        string toppings = "";
+        string[] vehicle = { "Car", "Bike", "Bus" };
         public Form1()
         {
             InitializeComponent();
-
+            comboVehicle.Items.AddRange(vehicle);
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
@@ -71,9 +73,9 @@ namespace WinFormsDemo
             password = tbxPassword.Text;
             profession = tbxProfession.Text;
 
-            if(!string.IsNullOrEmpty(name) &&
-                !string.IsNullOrEmpty(age)&&
-                !string.IsNullOrEmpty(password)&&
+            if (!string.IsNullOrEmpty(name) &&
+                !string.IsNullOrEmpty(age) &&
+                !string.IsNullOrEmpty(password) &&
                 !string.IsNullOrEmpty(profession))
             {
                 btnDisplayInformation_Click(sender, e);
@@ -85,6 +87,69 @@ namespace WinFormsDemo
                 MessageBox.Show("Please fill in all the fields before submitting.");
             }
 
+        }
+
+        private void RadioButtonSelection_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioVisa.Checked)
+            {
+                lblSelection.Text = radioVisa.Text;
+            }
+            else if (radioCash.Checked)
+            {
+                lblSelection.Text = radioCash.Text;
+            }
+            else if (radioPaypal.Checked)
+            {
+                lblSelection.Text = radioPaypal.Text;
+            }
+
+        }
+
+        private void PizzaSelection_CheckedChanged(object sender, EventArgs e)
+        {
+            toppings = "";
+
+            if (cbCheese.Checked)
+            {
+                toppings = cbCheese.Text + ", ";
+            }
+            if (cbPepperoni.Checked)
+            {
+                toppings += cbPepperoni.Text + ", ";
+            }
+            if (cbPatatine.Checked)
+            {
+                toppings += cbPatatine.Text + ", ";
+            }
+            lblSelection.Text = toppings != ""
+                ? toppings
+                : "you did not select any topping";
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            if (toppings != "")
+            {
+                MessageBox.Show("You have ordered a pizza with the following toppings: " + toppings);
+            }
+            else
+            {
+                MessageBox.Show("You have not selected any toppings for your pizza.");
+            }
+        }
+
+        private void btnPark_Click(object sender, EventArgs e)
+        {
+            string regNumber = tbxVehicleNum.Text;
+            bool regNumberValid = !string.IsNullOrEmpty(regNumber) && regNumber.Length >= 5;
+
+            // Check if a vehicle type is selected
+            if (comboVehicle.SelectedItem != null && regNumberValid)
+            {
+                string type = comboVehicle.SelectedItem.ToString();
+                lblParkHouse.Text = "type: " + type + "\n Vehicle Number: " + regNumber;
+            }
         }
     }
 }
