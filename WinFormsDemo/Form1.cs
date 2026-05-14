@@ -4,6 +4,7 @@ namespace WinFormsDemo
 {
     public partial class Form1 : Form
     {
+        List<string> nameList = new List<string> ();
         string name;
         string age;
         string profession;
@@ -16,6 +17,7 @@ namespace WinFormsDemo
             comboVehicle.Items.AddRange(vehicle);
             gbPark.Enabled = false;
             panelPark.Enabled = false;
+            lbxName.DataSource = nameList;
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
@@ -170,14 +172,23 @@ namespace WinFormsDemo
             string name = tbxUserInput.Text;
 
             if (!string.IsNullOrEmpty(name))
-            {
-                lbxName.Items.Add(name);
+            {   
+                //lbxName.Items.Add(name);
+                nameList.Add(name);
+                //refresh the listbox to show the new item
+
+                RefreshGui();
             }
         }
 
         private void btnClearList_Click(object sender, EventArgs e)
         {
-            lbxName.Items.Clear();
+            //lbxName.Items.Clear();
+            nameList.Clear();
+
+            //refresh the listbox to show the new item
+
+            RefreshGui();
         }
 
         private void btnSelection_Click(object sender, EventArgs e)
@@ -188,7 +199,9 @@ namespace WinFormsDemo
             if (selectedIndex != -1)
             {
                 string selectedName = lbxName.SelectedItem.ToString();
-                lblShowSelection.Text = "Item index is: " + selectedIndex + "\n Selected Item Name: " + lbxName.SelectedItem.ToString();
+                //lblShowSelection.Text = "Item index is: " + selectedIndex + "\n Selected Item Name: " + lbxName.SelectedItem.ToString();
+                lblShowSelection.Text = "Item index is: " + selectedIndex + "\n Selected Item Name: " + nameList[selectedIndex];
+                MessageBox.Show("You have selected: " + nameList[selectedIndex] + " at index: "+ selectedIndex);
             }
             else
             {
@@ -203,8 +216,9 @@ namespace WinFormsDemo
 
             if (selectedIndex != -1)
             {
-                string selectedName = lbxName.SelectedItem.ToString();
-                lblShowSelection.Text = "Item index is: " + selectedIndex + "\n Selected Item Name: " + lbxName.SelectedItem.ToString();
+                //string selectedName = lbxName.SelectedItem.ToString();
+
+                lblShowSelection.Text = "Item index is: " + selectedIndex + "\n Selected Item Name: " + nameList[selectedIndex];
             }
         }
 
@@ -214,12 +228,23 @@ namespace WinFormsDemo
 
             if (selectedIndex != -1)
             {
-                lbxName.Items.RemoveAt(selectedIndex);
-            }
+                //lbxName.Items.RemoveAt(selectedIndex); all this commented code is replace by the code below to use the list as the data source for the listbox
+                nameList.RemoveAt(selectedIndex);
+
+                //refresh the listbox to show the new item
+
+                RefreshGui();
+            }   
+
             else
             {
                 MessageBox.Show("Please select an item from the list to delete.");
             }
+        }
+
+        void RefreshGui() {
+            lbxName.DataSource = null;
+            lbxName.DataSource = nameList;
         }
     }
 }
