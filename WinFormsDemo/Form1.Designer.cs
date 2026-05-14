@@ -64,6 +64,24 @@
             lblVehicleType = new Label();
             lblParkHouse = new Label();
             btnPark = new Button();
+            gbPark = new GroupBox();
+            btnPay = new Button();
+            panelPark = new Panel();
+            btnDisplayOrder = new Button();
+            tabParkingControl = new TabControl();
+            tabPagePay = new TabPage();
+            tabPark = new TabPage();
+            lbxName = new ListBox();
+            tbxUserInput = new TextBox();
+            btnInsertIntoSystem = new Button();
+            btnClearList = new Button();
+            btnSelection = new Button();
+            lblShowSelection = new Label();
+            btnDelete = new Button();
+            panelPark.SuspendLayout();
+            tabParkingControl.SuspendLayout();
+            tabPagePay.SuspendLayout();
+            tabPark.SuspendLayout();
             SuspendLayout();
             // 
             // btnSave
@@ -283,7 +301,7 @@
             // radioVisa
             // 
             radioVisa.AutoSize = true;
-            radioVisa.Location = new Point(509, 45);
+            radioVisa.Location = new Point(33, 15);
             radioVisa.Name = "radioVisa";
             radioVisa.Size = new Size(46, 19);
             radioVisa.TabIndex = 23;
@@ -295,7 +313,7 @@
             // radioCash
             // 
             radioCash.AutoSize = true;
-            radioCash.Location = new Point(509, 71);
+            radioCash.Location = new Point(33, 41);
             radioCash.Name = "radioCash";
             radioCash.Size = new Size(51, 19);
             radioCash.TabIndex = 24;
@@ -307,7 +325,7 @@
             // radioPaypal
             // 
             radioPaypal.AutoSize = true;
-            radioPaypal.Location = new Point(509, 96);
+            radioPaypal.Location = new Point(33, 66);
             radioPaypal.Name = "radioPaypal";
             radioPaypal.Size = new Size(60, 19);
             radioPaypal.TabIndex = 25;
@@ -319,7 +337,7 @@
             // lblSelection
             // 
             lblSelection.AutoSize = true;
-            lblSelection.Location = new Point(648, 111);
+            lblSelection.Location = new Point(172, 81);
             lblSelection.Name = "lblSelection";
             lblSelection.Size = new Size(38, 15);
             lblSelection.TabIndex = 26;
@@ -328,7 +346,7 @@
             // cbCheese
             // 
             cbCheese.AutoSize = true;
-            cbCheese.Location = new Point(509, 123);
+            cbCheese.Location = new Point(33, 93);
             cbCheese.Name = "cbCheese";
             cbCheese.Size = new Size(64, 19);
             cbCheese.TabIndex = 27;
@@ -339,7 +357,7 @@
             // cbPatatine
             // 
             cbPatatine.AutoSize = true;
-            cbPatatine.Location = new Point(509, 148);
+            cbPatatine.Location = new Point(33, 118);
             cbPatatine.Name = "cbPatatine";
             cbPatatine.Size = new Size(69, 19);
             cbPatatine.TabIndex = 28;
@@ -350,7 +368,7 @@
             // cbPepperoni
             // 
             cbPepperoni.AutoSize = true;
-            cbPepperoni.Location = new Point(509, 173);
+            cbPepperoni.Location = new Point(33, 143);
             cbPepperoni.Name = "cbPepperoni";
             cbPepperoni.Size = new Size(80, 19);
             cbPepperoni.TabIndex = 29;
@@ -360,7 +378,7 @@
             // 
             // btnOrder
             // 
-            btnOrder.Location = new Point(509, 206);
+            btnOrder.Location = new Point(33, 176);
             btnOrder.Name = "btnOrder";
             btnOrder.Size = new Size(204, 23);
             btnOrder.TabIndex = 30;
@@ -372,14 +390,14 @@
             // 
             comboVehicle.DropDownStyle = ComboBoxStyle.DropDownList;
             comboVehicle.FormattingEnabled = true;
-            comboVehicle.Location = new Point(510, 340);
+            comboVehicle.Location = new Point(152, 48);
             comboVehicle.Name = "comboVehicle";
             comboVehicle.Size = new Size(203, 23);
             comboVehicle.TabIndex = 31;
             // 
             // tbxVehicleNum
             // 
-            tbxVehicleNum.Location = new Point(510, 311);
+            tbxVehicleNum.Location = new Point(152, 19);
             tbxVehicleNum.Name = "tbxVehicleNum";
             tbxVehicleNum.Size = new Size(203, 23);
             tbxVehicleNum.TabIndex = 32;
@@ -387,7 +405,7 @@
             // lblVehicleNum
             // 
             lblVehicleNum.AutoSize = true;
-            lblVehicleNum.Location = new Point(368, 314);
+            lblVehicleNum.Location = new Point(10, 22);
             lblVehicleNum.Name = "lblVehicleNum";
             lblVehicleNum.Size = new Size(136, 15);
             lblVehicleNum.TabIndex = 33;
@@ -396,7 +414,7 @@
             // lblVehicleType
             // 
             lblVehicleType.AutoSize = true;
-            lblVehicleType.Location = new Point(466, 343);
+            lblVehicleType.Location = new Point(108, 51);
             lblVehicleType.Name = "lblVehicleType";
             lblVehicleType.Size = new Size(31, 15);
             lblVehicleType.TabIndex = 34;
@@ -405,7 +423,7 @@
             // lblParkHouse
             // 
             lblParkHouse.AutoSize = true;
-            lblParkHouse.Location = new Point(588, 386);
+            lblParkHouse.Location = new Point(230, 94);
             lblParkHouse.Name = "lblParkHouse";
             lblParkHouse.Size = new Size(84, 15);
             lblParkHouse.TabIndex = 35;
@@ -413,7 +431,7 @@
             // 
             // btnPark
             // 
-            btnPark.Location = new Point(448, 386);
+            btnPark.Location = new Point(90, 94);
             btnPark.Name = "btnPark";
             btnPark.Size = new Size(75, 23);
             btnPark.TabIndex = 36;
@@ -421,25 +439,171 @@
             btnPark.UseVisualStyleBackColor = true;
             btnPark.Click += btnPark_Click;
             // 
+            // gbPark
+            // 
+            gbPark.Location = new Point(12, 331);
+            gbPark.Name = "gbPark";
+            gbPark.Size = new Size(130, 94);
+            gbPark.TabIndex = 37;
+            gbPark.TabStop = false;
+            gbPark.Text = "Park Your Vehicle";
+            // 
+            // btnPay
+            // 
+            btnPay.Location = new Point(133, 53);
+            btnPay.Name = "btnPay";
+            btnPay.Size = new Size(115, 61);
+            btnPay.TabIndex = 38;
+            btnPay.Text = "Pay Park Fee";
+            btnPay.UseVisualStyleBackColor = true;
+            btnPay.Click += btnPay_Click;
+            // 
+            // panelPark
+            // 
+            panelPark.BackColor = SystemColors.ActiveCaption;
+            panelPark.Controls.Add(radioPaypal);
+            panelPark.Controls.Add(radioVisa);
+            panelPark.Controls.Add(radioCash);
+            panelPark.Controls.Add(btnOrder);
+            panelPark.Controls.Add(lblSelection);
+            panelPark.Controls.Add(cbPepperoni);
+            panelPark.Controls.Add(cbCheese);
+            panelPark.Controls.Add(cbPatatine);
+            panelPark.Location = new Point(512, 41);
+            panelPark.Name = "panelPark";
+            panelPark.Size = new Size(393, 216);
+            panelPark.TabIndex = 39;
+            // 
+            // btnDisplayOrder
+            // 
+            btnDisplayOrder.Location = new Point(601, 263);
+            btnDisplayOrder.Name = "btnDisplayOrder";
+            btnDisplayOrder.Size = new Size(210, 33);
+            btnDisplayOrder.TabIndex = 40;
+            btnDisplayOrder.Text = "Enable Ordering";
+            btnDisplayOrder.UseVisualStyleBackColor = true;
+            btnDisplayOrder.Click += btnDisplayOrder_Click;
+            // 
+            // tabParkingControl
+            // 
+            tabParkingControl.Controls.Add(tabPagePay);
+            tabParkingControl.Controls.Add(tabPark);
+            tabParkingControl.Location = new Point(163, 331);
+            tabParkingControl.Name = "tabParkingControl";
+            tabParkingControl.SelectedIndex = 0;
+            tabParkingControl.Size = new Size(380, 185);
+            tabParkingControl.TabIndex = 41;
+            // 
+            // tabPagePay
+            // 
+            tabPagePay.Controls.Add(btnPay);
+            tabPagePay.Location = new Point(4, 24);
+            tabPagePay.Name = "tabPagePay";
+            tabPagePay.Padding = new Padding(3);
+            tabPagePay.Size = new Size(372, 157);
+            tabPagePay.TabIndex = 0;
+            tabPagePay.Text = "Pay";
+            tabPagePay.UseVisualStyleBackColor = true;
+            // 
+            // tabPark
+            // 
+            tabPark.Controls.Add(comboVehicle);
+            tabPark.Controls.Add(tbxVehicleNum);
+            tabPark.Controls.Add(lblVehicleType);
+            tabPark.Controls.Add(lblParkHouse);
+            tabPark.Controls.Add(lblVehicleNum);
+            tabPark.Controls.Add(btnPark);
+            tabPark.Location = new Point(4, 24);
+            tabPark.Name = "tabPark";
+            tabPark.Padding = new Padding(3);
+            tabPark.Size = new Size(372, 157);
+            tabPark.TabIndex = 1;
+            tabPark.Text = "Park";
+            tabPark.UseVisualStyleBackColor = true;
+            // 
+            // lbxName
+            // 
+            lbxName.FormattingEnabled = true;
+            lbxName.Location = new Point(618, 355);
+            lbxName.Name = "lbxName";
+            lbxName.Size = new Size(165, 214);
+            lbxName.TabIndex = 42;
+            lbxName.SelectedIndexChanged += lbxName_SelectedIndexChanged;
+            // 
+            // tbxUserInput
+            // 
+            tbxUserInput.Location = new Point(789, 355);
+            tbxUserInput.Name = "tbxUserInput";
+            tbxUserInput.Size = new Size(168, 23);
+            tbxUserInput.TabIndex = 43;
+            // 
+            // btnInsertIntoSystem
+            // 
+            btnInsertIntoSystem.Location = new Point(830, 402);
+            btnInsertIntoSystem.Name = "btnInsertIntoSystem";
+            btnInsertIntoSystem.Size = new Size(75, 23);
+            btnInsertIntoSystem.TabIndex = 44;
+            btnInsertIntoSystem.Text = "Insert";
+            btnInsertIntoSystem.UseVisualStyleBackColor = true;
+            btnInsertIntoSystem.Click += btnInsertIntoSystem_Click;
+            // 
+            // btnClearList
+            // 
+            btnClearList.Location = new Point(830, 460);
+            btnClearList.Name = "btnClearList";
+            btnClearList.Size = new Size(75, 23);
+            btnClearList.TabIndex = 45;
+            btnClearList.Text = "Clear List";
+            btnClearList.UseVisualStyleBackColor = true;
+            btnClearList.Click += btnClearList_Click;
+            // 
+            // btnSelection
+            // 
+            btnSelection.Location = new Point(830, 546);
+            btnSelection.Name = "btnSelection";
+            btnSelection.Size = new Size(75, 23);
+            btnSelection.TabIndex = 46;
+            btnSelection.Text = "Select";
+            btnSelection.UseVisualStyleBackColor = true;
+            btnSelection.Click += btnSelection_Click;
+            // 
+            // lblShowSelection
+            // 
+            lblShowSelection.AutoSize = true;
+            lblShowSelection.BackColor = SystemColors.ActiveCaption;
+            lblShowSelection.Location = new Point(653, 582);
+            lblShowSelection.Name = "lblShowSelection";
+            lblShowSelection.Size = new Size(87, 15);
+            lblShowSelection.TabIndex = 47;
+            lblShowSelection.Text = "Show Selection";
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(830, 431);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(75, 23);
+            btnDelete.TabIndex = 48;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(btnPark);
-            Controls.Add(lblParkHouse);
-            Controls.Add(lblVehicleType);
-            Controls.Add(lblVehicleNum);
-            Controls.Add(tbxVehicleNum);
-            Controls.Add(comboVehicle);
-            Controls.Add(btnOrder);
-            Controls.Add(cbPepperoni);
-            Controls.Add(cbPatatine);
-            Controls.Add(cbCheese);
-            Controls.Add(lblSelection);
-            Controls.Add(radioPaypal);
-            Controls.Add(radioCash);
-            Controls.Add(radioVisa);
+            BackColor = Color.Gold;
+            ClientSize = new Size(999, 691);
+            Controls.Add(btnDelete);
+            Controls.Add(lblShowSelection);
+            Controls.Add(btnSelection);
+            Controls.Add(btnClearList);
+            Controls.Add(btnInsertIntoSystem);
+            Controls.Add(tbxUserInput);
+            Controls.Add(lbxName);
+            Controls.Add(tabParkingControl);
+            Controls.Add(btnDisplayOrder);
+            Controls.Add(panelPark);
+            Controls.Add(gbPark);
             Controls.Add(btnSubmit);
             Controls.Add(tbxProfession);
             Controls.Add(tbxPassword);
@@ -466,6 +630,12 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Bank Application";
             Load += Form1_Load;
+            panelPark.ResumeLayout(false);
+            panelPark.PerformLayout();
+            tabParkingControl.ResumeLayout(false);
+            tabPagePay.ResumeLayout(false);
+            tabPark.ResumeLayout(false);
+            tabPark.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -508,5 +678,19 @@
         private Label lblVehicleType;
         private Label lblParkHouse;
         private Button btnPark;
+        private GroupBox gbPark;
+        private Button btnPay;
+        private Panel panelPark;
+        private Button btnDisplayOrder;
+        private TabControl tabParkingControl;
+        private TabPage tabPagePay;
+        private TabPage tabPark;
+        private ListBox lbxName;
+        private TextBox tbxUserInput;
+        private Button btnInsertIntoSystem;
+        private Button btnClearList;
+        private Button btnSelection;
+        private Label lblShowSelection;
+        private Button btnDelete;
     }
 }

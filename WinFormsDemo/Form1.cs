@@ -14,6 +14,8 @@ namespace WinFormsDemo
         {
             InitializeComponent();
             comboVehicle.Items.AddRange(vehicle);
+            gbPark.Enabled = false;
+            panelPark.Enabled = false;
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
@@ -149,6 +151,74 @@ namespace WinFormsDemo
             {
                 string type = comboVehicle.SelectedItem.ToString();
                 lblParkHouse.Text = "type: " + type + "\n Vehicle Number: " + regNumber;
+            }
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            gbPark.Enabled = true;
+            tabParkingControl.SelectedTab = tabPark;
+        }
+
+        private void btnDisplayOrder_Click(object sender, EventArgs e)
+        {
+            panelPark.Enabled = true;
+        }
+
+        private void btnInsertIntoSystem_Click(object sender, EventArgs e)
+        {
+            string name = tbxUserInput.Text;
+
+            if (!string.IsNullOrEmpty(name))
+            {
+                lbxName.Items.Add(name);
+            }
+        }
+
+        private void btnClearList_Click(object sender, EventArgs e)
+        {
+            lbxName.Items.Clear();
+        }
+
+        private void btnSelection_Click(object sender, EventArgs e)
+        {
+            //button method to display the selected item in the listbox
+            int selectedIndex = lbxName.SelectedIndex;
+
+            if (selectedIndex != -1)
+            {
+                string selectedName = lbxName.SelectedItem.ToString();
+                lblShowSelection.Text = "Item index is: " + selectedIndex + "\n Selected Item Name: " + lbxName.SelectedItem.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Please select an item from the list.");
+            }
+        }
+
+        private void lbxName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //live method to display the selected item in the listbox when the selection changes
+            int selectedIndex = lbxName.SelectedIndex;
+
+            if (selectedIndex != -1)
+            {
+                string selectedName = lbxName.SelectedItem.ToString();
+                lblShowSelection.Text = "Item index is: " + selectedIndex + "\n Selected Item Name: " + lbxName.SelectedItem.ToString();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = lbxName.SelectedIndex;
+
+            if (selectedIndex != -1)
+            {
+                lbxName.Items.RemoveAt(selectedIndex);
+            }
+            else
+            {
+                MessageBox.Show("Please select an item from the list to delete.");
             }
         }
     }
